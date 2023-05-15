@@ -1,0 +1,1 @@
+# npmpackages-memo
