@@ -11,10 +11,8 @@ https://packages-memo-client.vercel.app/
 
 ## PREVIEW 
 
-<img width="1678" alt="Screen Shot 2023-08-21 at 5 01 57 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/14b8f990-e94a-4865-afd7-bea3e985defa">
+<img width="1678" alt="Screen Shot 2023-08-21 at 5 01 57 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/79fb1186-9549-4e04-ab69-7d6cd3b1d9ac">
+<img width="1680" alt="Screen Shot 2023-08-21 at 5 01 11 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/40a061b6-fee6-4d5a-a52e-c4e9891048f8">
+<img width="1680" alt="Screen Shot 2023-08-21 at 5 00 54 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/b93f403b-0711-4a04-aba1-3a8b718ce3c5">
 
-<img width="1680" alt="Screen Shot 2023-08-21 at 5 01 11 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/04bed857-2da9-462a-b197-4098dc24b66c">
-
-<img width="1680" alt="Screen Shot 2023-08-21 at 5 00 54 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/a95131eb-1bba-438a-a509-7477da13c2b9">
-
-<img width="390" alt="Screen Shot 2023-08-21 at 4 58 49 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/1ac21d1d-403f-4a38-bdf4-bb4a23a525dd">
+<img width="390" alt="Screen Shot 2023-08-21 at 4 58 49 PM" src="https://github.com/annesophiesimon/npmpackages-memo/assets/9214700/4ced33d4-1d7f-4da9-9fc4-857cfffcec32">
