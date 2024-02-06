@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/api/npmpackages/';
+const API_URL = 'https://packages-memo-api.vercel.app/api/npmpackages/';
 
 // Create new package
 
