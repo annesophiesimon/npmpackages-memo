@@ -44,7 +44,7 @@ const Dashboard = () => {
             {userName}'s Dashboard
           </h1>
           <PackagesForm />
-          <section className='w-full flex justify-center'>
+          <section className='md:w-full flex justify-center'>
             {npmpackages.length > 0 ? (
               <PackageItemTable npmpackages={npmpackages} />
             ) : (
