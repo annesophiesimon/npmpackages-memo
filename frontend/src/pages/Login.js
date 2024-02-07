@@ -66,7 +66,7 @@ const Login = () => {
           className='flex flex-col w-80 space-y-2 mb-5'>
           <label htmlFor='text'> Email</label>
           <input
-            className='border-2 border-gray-300 rounded p-1'
+            className='border border-gray-300 rounded p-1'
             type='text'
             name='email'
             id='email'
@@ -76,7 +76,7 @@ const Login = () => {
           <label htmlFor='text'> Password</label>
           <div className='relative'>
             <input
-              className='border-2 border-gray-300 rounded p-1 w-full'
+              className='border border-gray-300 rounded p-1 w-full'
               type={isPasswordHidden ? "password" : "text"}
               name='password'
               id='password'

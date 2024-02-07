@@ -136,7 +136,7 @@ const Signup = () => {
           className='flex flex-col w-80 space-y-2 mb-5 m-auto'>
           <label htmlFor='text'> Username</label>
           <input
-            className='border-2 border-gray-300 rounded p-1'
+            className='border border-gray-300 rounded p-1'
             type='text'
             name='username'
             id='username'
@@ -145,7 +145,7 @@ const Signup = () => {
           />
           <label htmlFor='text'> Email</label>
           <input
-            className='border-2 border-gray-300 rounded p-1'
+            className='border border-gray-300 rounded p-1'
             type='text'
             name='email'
             id='email'
@@ -155,7 +155,7 @@ const Signup = () => {
           <label htmlFor='text'> Password</label>
           <div className='relative'>
             <input
-              className='border-2 border-gray-300 rounded p-1 w-full'
+              className='border border-gray-300 rounded p-1 w-full'
               type={isPasswordHidden ? "password" : "text"}
               name='password'
               id='password'
@@ -175,7 +175,7 @@ const Signup = () => {
           <label htmlFor='text'> Repeat password</label>
           <div className='relative'>
             <input
-              className='border-2 border-gray-300 rounded p-1 w-full'
+              className='border border-gray-300 rounded p-1 w-full'
               type={isRepeatedPasswordHidden ? "password" : "text"}
               name='repeatedpassword'
               id='repeatedpassword'
