@@ -32,7 +32,11 @@ const BodyTable = ({ datas }) => {
           <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
             <div className='flex flex-col gap-2'>
               <span className='md:hidden'>Name: </span>
-              <Link to={link}>{name}</Link>
+              <Link
+                target='_blank'
+                to={link}>
+                {name}
+              </Link>
             </div>
           </td>
           <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>

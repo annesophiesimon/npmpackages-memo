@@ -29,7 +29,7 @@ const Login = () => {
       toast.error(message);
     }
     if (isSuccess || user) {
-      navigate("/");
+      navigate("/dashboard");
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
@@ -51,7 +51,12 @@ const Login = () => {
     dispatch(login(userData));
   };
 
-  if (isLoading) return <Spinner />;
+  if (isLoading)
+    return (
+      <div className='flex justify-center'>
+        <Spinner />
+      </div>
+    );
 
   return (
     <div className='text-slate-600 h-screen w-screen flex flex-col justify-center items-center'>

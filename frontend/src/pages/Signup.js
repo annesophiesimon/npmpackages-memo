@@ -117,7 +117,11 @@ const Signup = () => {
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <div className='flex justify-center'>
+        <Spinner />
+      </div>
+    );
   }
 
   return (
