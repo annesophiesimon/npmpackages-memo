@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import logoph from "../assets/logoph.png";
-// import SearchBar from './SearchBar';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -26,8 +25,6 @@ const Header = () => {
           />{" "}
         </Link>
       </div>
-      {/* Only display if user is loggin*/}
-      {/* <SearchBar />  */}
       <ul className='flex space-x-4'>
         {user ? (
           <li>

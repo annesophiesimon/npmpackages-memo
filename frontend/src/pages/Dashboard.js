@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getPackages, reset } from "../features/npmpackages/npmpackageSlice";
-import PackageItemTable from "../components/PackageItemTable";
+import PackageItemTable from "../containers/PackageItemTable";
 import Spinner from "../components/Spinner";
 
 const Dashboard = () => {
@@ -36,7 +36,11 @@ const Dashboard = () => {
   }, [user, navigate, isError, message, dispatch]);
 
   if (isLoading) {
-    return <Spinner />;
+    return (
+      <div className='flex justify-center'>
+        <Spinner />
+      </div>
+    );
   }
 
   const userName =
