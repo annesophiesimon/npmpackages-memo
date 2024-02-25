@@ -37,7 +37,7 @@ const PackageItemTable = ({ npmpackages, isAdding, toggleAdding }) => {
     setPackageData({ ...packageData, [e.target.name]: e.target.value });
   };
   return (
-    <div className='md:w-full w-80 shadow-md md:mx-20 '>
+    <div className='md:w-full w-80 shadow-md md:mx-20'>
       <table className='w-full text-sm text-gray-500'>
         <HeadTable />
         {npmpackages.length &&
@@ -52,40 +52,52 @@ const PackageItemTable = ({ npmpackages, isAdding, toggleAdding }) => {
         {isAdding && (
           <tr>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                name='name'
-                value={packageData.name}
-                onChange={onChange}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Name: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1 w-full'
+                  type='text'
+                  name='name'
+                  value={packageData.name}
+                  onChange={onChange}
+                />
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                name='description'
-                value={packageData.description}
-                onChange={onChange}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Description: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1 w-full'
+                  type='text'
+                  name='description'
+                  value={packageData.description}
+                  onChange={onChange}
+                />
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                name='link'
-                value={packageData.link}
-                onChange={onChange}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Link: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1 w-full'
+                  type='text'
+                  name='link'
+                  value={packageData.link}
+                  onChange={onChange}
+                />
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                name='category'
-                value={packageData.category}
-                onChange={onChange}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Category: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1 w-full'
+                  type='text'
+                  name='category'
+                  value={packageData.category}
+                  onChange={onChange}
+                />
+              </div>
             </td>
             <td className='px-6 py-4  block md:table-cell text-center md:text-left'>
               <button

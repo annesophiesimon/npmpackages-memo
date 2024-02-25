@@ -9,46 +9,50 @@ import {
 const BodyTable = ({ datas }) => {
   const dispatch = useDispatch();
 
-  const { link, name, description, category, _id, userId } = datas;
-  const [nameEdit, setName] = useState(name);
-  const [categoryEdit, setCategory] = useState(category);
-  const [descriptionEdit, setDescription] = useState(description);
-  const [linkEdit, setLink] = useState(link);
+  const { link, name, description, category, _id } = datas;
+  const [packageData, setPackageData] = useState(datas);
+  const handleChange = (e) => {
+    setPackageData({ ...packageData, [e.target.name]: e.target.value });
+  };
+
   const [isEdit, setIsEdit] = useState(false);
 
   const editPackage = () => {
     setIsEdit(!isEdit);
   };
 
-  const onSubmit = (e, id) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      updatePackage({
-        _id: id,
-        name: nameEdit,
-        description: descriptionEdit,
-        link: linkEdit,
-        category: categoryEdit,
-        userId: userId,
-      })
-    );
+    dispatch(updatePackage(packageData));
   };
   return (
     <>
       <tbody>
         {!isEdit ? (
-          <tr className='bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600 text-center md:text-left'>
+          <tr className='bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600'>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <Link to={link}>{name}</Link>
+              <div className='flex flex-col gap-2'>
+                <span className='md:hidden'>Name: </span>
+                <Link to={link}>{name}</Link>
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <div>{description}</div>
+              <div className='flex flex-col gap-2'>
+                <span className='md:hidden'>Description: </span>
+                <div>{description}</div>
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              {link}
+              <div className='flex flex-col gap-2'>
+                <span className='md:hidden'>Link: </span>
+                {link}
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              {category}
+              <div className='flex flex-col gap-2'>
+                <span className='md:hidden'>Category: </span>
+                {category}
+              </div>
             </td>
             <td className='px-6 py-4 block md:table-cell'>
               <button
@@ -69,51 +73,67 @@ const BodyTable = ({ datas }) => {
         ) : (
           <tr>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                value={nameEdit}
-                form='package_form'
-                onChange={(e) => setName(e.target.value)}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Name: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1'
+                  name='name'
+                  type='text'
+                  value={packageData.name}
+                  form='package_form'
+                  onChange={handleChange}
+                />
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                value={descriptionEdit}
-                form='package_form'
-                onChange={(e) => setDescription(e.target.value)}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Description: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1'
+                  type='text'
+                  name='description'
+                  value={packageData.description}
+                  form='package_form'
+                  onChange={handleChange}
+                />
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                value={linkEdit}
-                form='package_form'
-                onChange={(e) => setLink(e.target.value)}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Link: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1'
+                  type='text'
+                  value={packageData.link}
+                  name='link'
+                  form='package_form'
+                  onChange={handleChange}
+                />
+              </div>
             </td>
             <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-              <input
-                className='border-2 border-gray-300 rounded p-1 w-full'
-                type='text'
-                value={categoryEdit ? categoryEdit : ""}
-                form='package_form'
-                onChange={(e) => setCategory(e.target.value)}
-              />
+              <div className='flex flex-col gap-2'>
+                <label className='md:hidden'>Category: </label>
+                <input
+                  className='border-2 border-gray-300 rounded p-1'
+                  type='text'
+                  name='category'
+                  value={packageData.category}
+                  form='package_form'
+                  onChange={handleChange}
+                />
+              </div>
             </td>
-            <td className='px-6 py-4  block md:table-cell text-center md:text-left'>
+            <td className='px-6 py-4  block md:table-cell'>
               <button
                 onClick={() => editPackage()}
                 className='font-medium md:text-orange-600 md:bg-transparent hover:underline bg-orange-600 text-white p-2 rounded-md w-full'>
                 Edit
               </button>
             </td>
-            <td className='px-6 py-4 block md:table-cell text-center md:text-left'>
+            <td className='px-6 py-4 block md:table-cell'>
               <button
-                onClick={(e) => onSubmit(e, _id)}
+                onClick={(e) => onSubmit(e)}
                 className='font-medium md:text-orange-600 md:bg-transparent hover:underline bg-orange-600 text-white p-2 rounded-md w-full'
                 type='submit'
                 form='package_form'>

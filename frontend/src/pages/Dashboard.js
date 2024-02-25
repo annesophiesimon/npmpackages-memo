@@ -67,7 +67,7 @@ const Dashboard = () => {
           {!isAdding && (
             <button
               onClick={addPackage}
-              className='rounded-full h-8 w-8 bg-orange-600 text-white text-xl'>
+              className='rounded-full h-10 w-10 bg-orange-600 text-white text-2xl flex justify-center items-center'>
               +
             </button>
           )}
