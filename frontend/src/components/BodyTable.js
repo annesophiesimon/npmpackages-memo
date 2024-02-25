@@ -54,82 +54,73 @@ const BodyTable = ({ datas }) => {
               <button
                 value={_id}
                 onClick={() => editPackage()}
-                className='font-medium md:text-blue-600 md:bg-transparent hover:underline bg-blue-600 text-white p-2 rounded-md w-full'>
+                className='font-medium md:text-orange-600 md:bg-transparent hover:underline bg-orange-600 text-white p-2 rounded-md w-full'>
                 Edit
               </button>
             </td>
             <td className='px-6 py-4 block md:table-cell'>
               <button
                 onClick={() => dispatch(deletePackage(_id))}
-                className='font-medium md:text-blue-600 md:bg-transparent hover:underline bg-blue-600 text-white p-2 rounded-md w-full'>
+                className='font-medium md:text-orange-600 md:bg-transparent hover:underline bg-orange-600 text-white p-2 rounded-md w-full'>
                 Delete
               </button>
             </td>
           </tr>
         ) : (
-          <div>
-            <tr>
-              <td className='collapse block md:table-cell'>
-                <form
-                  method='POST'
-                  id='package_form'
-                  onSubmit={(e) => onSubmit(e, _id)}></form>
-              </td>
-            </tr>
-            <tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 block text-center md:text-left'>
-              <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-                <input
-                  className='border-2 border-gray-300 rounded p-1 w-full'
-                  type='text'
-                  value={nameEdit}
-                  form='package_form'
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </td>
-              <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-                <input
-                  className='border-2 border-gray-300 rounded p-1 w-full'
-                  type='text'
-                  value={descriptionEdit}
-                  form='package_form'
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              </td>
-              <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-                <input
-                  className='border-2 border-gray-300 rounded p-1 w-full'
-                  type='text'
-                  value={linkEdit}
-                  form='package_form'
-                  onChange={(e) => setLink(e.target.value)}
-                />
-              </td>
-              <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
-                <input
-                  className='border-2 border-gray-300 rounded p-1 w-full'
-                  type='text'
-                  value={categoryEdit ? categoryEdit : ""}
-                  form='package_form'
-                  onChange={(e) => setCategory(e.target.value)}
-                />
-              </td>
-              <td className='px-6 py-4  block md:table-cell text-center md:text-left'>
-                <button
-                  onClick={() => editPackage()}
-                  className='font-medium md:text-blue-600 md:bg-transparent hover:underline bg-blue-600 text-white p-2 rounded-md w-full'>
-                  Edit
-                </button>
-              </td>
-              <td className='px-6 py-4 block md:table-cell text-center md:text-left'>
-                <button
-                  className='font-medium md:text-blue-600 md:bg-transparent hover:underline bg-blue-600 text-white p-2 rounded-md w-full'
-                  type='submit'
-                  form='package_form'>
-                  Submit
-                </button>
-              </td>
-            </tr>
-          </div>
+          <tr>
+            <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
+              <input
+                className='border-2 border-gray-300 rounded p-1 w-full'
+                type='text'
+                value={nameEdit}
+                form='package_form'
+                onChange={(e) => setName(e.target.value)}
+              />
+            </td>
+            <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
+              <input
+                className='border-2 border-gray-300 rounded p-1 w-full'
+                type='text'
+                value={descriptionEdit}
+                form='package_form'
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </td>
+            <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
+              <input
+                className='border-2 border-gray-300 rounded p-1 w-full'
+                type='text'
+                value={linkEdit}
+                form='package_form'
+                onChange={(e) => setLink(e.target.value)}
+              />
+            </td>
+            <td className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white block md:table-cell'>
+              <input
+                className='border-2 border-gray-300 rounded p-1 w-full'
+                type='text'
+                value={categoryEdit ? categoryEdit : ""}
+                form='package_form'
+                onChange={(e) => setCategory(e.target.value)}
+              />
+            </td>
+            <td className='px-6 py-4  block md:table-cell text-center md:text-left'>
+              <button
+                onClick={() => editPackage()}
+                className='font-medium md:text-orange-600 md:bg-transparent hover:underline bg-orange-600 text-white p-2 rounded-md w-full'>
+                Edit
+              </button>
+            </td>
+            <td className='px-6 py-4 block md:table-cell text-center md:text-left'>
+              <button
+                onClick={(e) => onSubmit(e, _id)}
+                className='font-medium md:text-orange-600 md:bg-transparent hover:underline bg-orange-600 text-white p-2 rounded-md w-full'
+                type='submit'
+                form='package_form'>
+                Submit
+              </button>
+            </td>
+          </tr>
         )}
       </tbody>
     </>

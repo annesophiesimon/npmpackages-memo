@@ -96,14 +96,14 @@ const PackageItem = ({ npmpackage }) => {
                 <td className='px-6 py-4 text-right'>
                   <button
                     onClick={() => editPackage()}
-                    className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
+                    className='font-medium text-orange-600 dark:text-orange-500 hover:underline'>
                     Edit
                   </button>
                 </td>
                 <td className='px-6 py-4 text-right'>
                   <button
                     onClick={() => dispatch(deletePackage(_id))}
-                    className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
+                    className='font-medium text-orange-600 dark:text-orange-500 hover:underline'>
                     Delete
                   </button>
                 </td>
@@ -149,13 +149,13 @@ const PackageItem = ({ npmpackage }) => {
                 <td className='px-6 py-4 text-right'>
                   <button
                     onClick={() => editPackage()}
-                    className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
+                    className='font-medium text-orange-600 dark:text-orange-500 hover:underline'>
                     Edit
                   </button>
                 </td>
                 <td className='px-6 py-4 text-right'>
                   <button
-                    className='font-medium text-blue-600 dark:text-blue-500 hover:underline'
+                    className='font-medium text-orange-600 dark:text-orange-500 hover:underline'
                     type='submit'
                     form='package_form'>
                     Submit

@@ -122,15 +122,13 @@ const Signup = () => {
 
   return (
     <div className='h-screen w-screen flex flex-col justify-center items-center bg-slate-50  text-slate-600'>
-      <h1 className='text-center text-3xl font-bold font-serif mb-5'>
-        Packages Memo
-      </h1>
+      <h1 className='text-center text-3xl font-sansserif mb-5'>PACKAGES HUB</h1>
       <div
         style={customShadowStyle}
-        className='text-slate-600 py-10 px-10 bg-white rounded-md'>
-        <h1 className='text-center w-96 text-xl mb-4'>
-          Sign up to create your packages memo dashboard
-        </h1>
+        className='text-slate-600 py-10 bg-white rounded-md'>
+        <h2 className='text-center w-96 text-xl mb-4'>
+          Sign up to create your packages Hub
+        </h2>
         <form
           onSubmit={onSubmit}
           className='flex flex-col w-80 space-y-2 mb-5 m-auto'>
@@ -196,21 +194,13 @@ const Signup = () => {
           </div>
           <div className='flex justify-center'>
             <button
-              className='bg-blue-600 rounded text-white p-1 w-80 disabled:opacity-75'
+              className='bg-orange-600 rounded text-white p-1 w-80 disabled:opacity-75'
               type='submit'
               disabled={!isFormValid()}>
-              Signup
+              Create an Account
             </button>
           </div>
         </form>
-        <div className='flex w-80 justify-center my-5 m-auto'>
-          <Link
-            to='/login'
-            className='text-blue-600 '>
-            {" "}
-            Already have an account? Login
-          </Link>
-        </div>
         <div className='w-80 m-auto'>
           <h2 className='font-bold my-2'>Password guideline</h2>
           <ul>
@@ -269,6 +259,14 @@ const Signup = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className='flex flex-col w-80 text-center my-5 text-orange-600 '>
+        Already have an account?
+        <Link
+          className='underline underline-offset-2'
+          to='/login'>
+          Login
+        </Link>
       </div>
     </div>
   );
