@@ -37,8 +37,8 @@ const PackageItemTable = ({ npmpackages, isAdding, toggleAdding }) => {
     setPackageData({ ...packageData, [e.target.name]: e.target.value });
   };
   return (
-    <div className='md:w-full w-80 shadow-md md:mx-20'>
-      <table className='w-full text-sm text-gray-500'>
+    <div className='shadow-md m-5'>
+      <table className='text-sm text-gray-500'>
         <HeadTable />
         <tbody>
           {npmpackages.length &&

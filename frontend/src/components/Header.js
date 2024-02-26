@@ -27,9 +27,14 @@ const Header = () => {
       </div>
       <ul className='flex space-x-4'>
         {user ? (
-          <li>
-            <button onClick={onLogout}> Logout</button>
-          </li>
+          <>
+            <li>
+              <Link to='/dashboard'> My hub</Link>
+            </li>
+            <li>
+              <button onClick={onLogout}> Logout</button>
+            </li>
+          </>
         ) : (
           <>
             <li>

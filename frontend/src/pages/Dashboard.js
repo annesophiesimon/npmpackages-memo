@@ -49,9 +49,9 @@ const Dashboard = () => {
     "";
 
   return (
-    <div className='flex flex-col m-24 justify-center items-center text-slate-600'>
+    <div className='flex flex-col justify-center items-center text-slate-600 m-5 p-2'>
       {user && userName && (
-        <div className='w-full flex flex-col items-center space-y-8'>
+        <div className='flex flex-col items-center space-y-8'>
           <h1 className='text-center text-3xl font-sansserif'>
             {userName}'s Packages Hub
           </h1>
