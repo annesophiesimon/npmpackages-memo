@@ -125,17 +125,19 @@ const Signup = () => {
   }
 
   return (
-    <div className='h-screen w-screen flex flex-col justify-center items-center bg-slate-50  text-slate-600'>
-      <h1 className='text-center text-3xl font-sansserif mb-5'>PACKAGES HUB</h1>
+    <div className='py-10 w-screen flex flex-col justify-center items-center bg-slate-50  text-slate-600'>
+      <h1 className='text-center text-xl md:text-3xl font-sansserif mb-5'>
+        PACKAGES HUB
+      </h1>
       <div
         style={customShadowStyle}
         className='text-slate-600 py-10 bg-white rounded-md'>
-        <h2 className='text-center w-96 text-xl mb-4'>
+        <h2 className='text-center p-8 text-xl mb-4'>
           Sign up to create your packages Hub
         </h2>
         <form
           onSubmit={onSubmit}
-          className='flex flex-col w-80 space-y-2 mb-5 m-auto'>
+          className='flex flex-col px-10 space-y-2 mb-5 m-auto'>
           <label htmlFor='text'> Username</label>
           <input
             className='border border-gray-300 rounded p-1'
@@ -198,14 +200,14 @@ const Signup = () => {
           </div>
           <div className='flex justify-center'>
             <button
-              className='bg-orange-600 rounded text-white p-1 w-80 disabled:opacity-75'
+              className='bg-orange-600 mt-2 rounded text-white p-1 w-full disabled:opacity-75'
               type='submit'
               disabled={!isFormValid()}>
               Create an Account
             </button>
           </div>
         </form>
-        <div className='w-80 m-auto'>
+        <div className='px-10 m-auto'>
           <h2 className='font-bold my-2'>Password guideline</h2>
           <ul>
             <li className='flex items-center'>
@@ -264,7 +266,7 @@ const Signup = () => {
           </ul>
         </div>
       </div>
-      <div className='flex flex-col w-80 text-center my-5 text-orange-600 '>
+      <div className='flex flex-col text-center my-5 text-orange-600 '>
         Already have an account?
         <Link
           className='underline underline-offset-2'
