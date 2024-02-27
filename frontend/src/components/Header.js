@@ -19,7 +19,7 @@ const Header = () => {
       <div className='logo'>
         <Link to='/'>
           <img
-            className='w-32'
+            className='w-24 md:w-32'
             src={logoph}
             alt='logo-packages-Memo'
           />{" "}

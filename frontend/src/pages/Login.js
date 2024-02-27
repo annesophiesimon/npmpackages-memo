@@ -59,14 +59,14 @@ const Login = () => {
     );
 
   return (
-    <div className='text-slate-600 mt-5 w-screen flex flex-col justify-center items-center'>
+    <div className='text-slate-600 p-5 w-screen flex flex-col justify-center items-center'>
       <h1 className='text-center text-xl md:text-3xl font-sansserif mb-10'>
         PACKAGES HUB
       </h1>
       <div
         style={customShadowStyle}
         className='text-slate-600 py-10 bg-white rounded-md  border-cyan-100 md:w-96'>
-        <h2 className='text-center p-5 text-xl mb-4'>Sign In</h2>
+        <h2 className='text-center text-xl mb-4'>Sign In</h2>
         <form
           onSubmit={(e) => onSubmit(e)}
           className='px-10 flex flex-col space-y-2 mb-5 m-auto'>
@@ -82,7 +82,7 @@ const Login = () => {
           <label htmlFor='text'> Password</label>
           <div className='relative'>
             <input
-              className='border border-gray-300 rounded p-1 w-full'
+              className='border w-full border-gray-300 rounded p-1'
               type={isPasswordHidden ? "password" : "text"}
               name='password'
               id='password'
@@ -109,7 +109,7 @@ const Login = () => {
           </div>
         </form>
       </div>
-      <div className='flex flex-col justify-center my-10 text-orange-600 p-1 text-center '>
+      <div className='flex flex-col justify-center my-10 text-orange-600 text-center '>
         Don't have an account yet?
         <Link
           to='/signup'

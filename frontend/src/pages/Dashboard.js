@@ -55,7 +55,8 @@ const Dashboard = () => {
           <h1 className='text-center text-3xl font-sansserif'>
             {userName}'s Packages Hub
           </h1>
-          <section className='md:w-full flex justify-center'>
+
+          <section className='md:w-full flex justify-center m-auto'>
             {npmpackages.length > 0 ? (
               <PackageItemTable
                 npmpackages={npmpackages}

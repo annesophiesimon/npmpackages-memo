@@ -125,19 +125,19 @@ const Signup = () => {
   }
 
   return (
-    <div className='py-10 w-screen flex flex-col justify-center items-center bg-slate-50  text-slate-600'>
+    <div className='text-slate-600 w-screen flex flex-col justify-center items-center p-5'>
       <h1 className='text-center text-xl md:text-3xl font-sansserif mb-5'>
         PACKAGES HUB
       </h1>
       <div
         style={customShadowStyle}
-        className='text-slate-600 py-10 bg-white rounded-md'>
+        className='text-slate-600 py-10 bg-white rounded-md  border-cyan-100 md:w-96'>
         <h2 className='text-center p-8 text-xl mb-4'>
           Sign up to create your packages Hub
         </h2>
         <form
           onSubmit={onSubmit}
-          className='flex flex-col px-10 space-y-2 mb-5 m-auto'>
+          className='px-10 flex flex-col space-y-2 mb-5 m-auto'>
           <label htmlFor='text'> Username</label>
           <input
             className='border border-gray-300 rounded p-1'
