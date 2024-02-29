@@ -1,7 +1,13 @@
 import React from "react";
 import Input from "./Input";
 
-const EditForm = ({ packageData, onEdit, onSubmit, onChange }) => {
+const EditForm = ({
+  packageData,
+  onAction,
+  onSubmit,
+  onChange,
+  actionName,
+}) => {
   const handleSubmit = (e) => {
     onSubmit(e);
   };
@@ -53,9 +59,9 @@ const EditForm = ({ packageData, onEdit, onSubmit, onChange }) => {
       </td>
       <td className='px-6 py-4  block md:table-cell'>
         <button
-          onClick={onEdit}
+          onClick={onAction}
           className='font-medium md:text-orange-600 md:bg-transparent hover:underline bg-orange-600 text-white p-2 rounded-md w-full'>
-          Edit
+          {actionName}
         </button>
       </td>
       <td className='px-6 py-4 block md:table-cell'>

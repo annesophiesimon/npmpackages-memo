@@ -5,7 +5,7 @@ import {
   updatePackage,
 } from "../features/npmpackages/npmpackageSlice";
 import TableRow from "./TableRow";
-import EditForm from "./EditForm";
+import DataForm from "./DataForm";
 
 const BodyTable = ({ datas }) => {
   const dispatch = useDispatch();
@@ -38,9 +38,10 @@ const BodyTable = ({ datas }) => {
           onDelete={handleDelete}
         />
       ) : (
-        <EditForm
+        <DataForm
           packageData={packageData}
-          onEdit={editPackage}
+          onAction={editPackage}
+          actionName='Edit'
           onSubmit={onSubmit}
           onChange={handleChange}
         />
