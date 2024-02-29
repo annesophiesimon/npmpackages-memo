@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import useFormData from "../hook/useFormData";
 import {
   deletePackage,
   updatePackage,
@@ -10,10 +11,7 @@ import DataForm from "./DataForm";
 const BodyTable = ({ datas }) => {
   const dispatch = useDispatch();
 
-  const [packageData, setPackageData] = useState(datas);
-  const handleChange = (e) => {
-    setPackageData({ ...packageData, [e.target.name]: e.target.value });
-  };
+  const [formData, handleChange] = useFormData(datas);
 
   const [isEdit, setIsEdit] = useState(false);
 
@@ -27,7 +25,7 @@ const BodyTable = ({ datas }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(updatePackage(packageData));
+    dispatch(updatePackage(formData));
   };
   return (
     <>
@@ -39,7 +37,7 @@ const BodyTable = ({ datas }) => {
         />
       ) : (
         <DataForm
-          packageData={packageData}
+          packageData={formData}
           onAction={editPackage}
           actionName='Edit'
           onSubmit={onSubmit}

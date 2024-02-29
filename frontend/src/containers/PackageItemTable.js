@@ -1,6 +1,7 @@
 import HeadTable from "../components/HeadTable";
 import BodyTable from "../components/BodyTable";
 import { useState } from "react";
+import useFormData from "../hook/useFormData";
 import { useDispatch, useSelector } from "react-redux";
 import { createPackage } from "../features/npmpackages/npmpackageSlice";
 import DataForm from "../components/DataForm";
@@ -12,7 +13,8 @@ const PackageItemTable = ({ npmpackages, isAdding, toggleAdding }) => {
     category: "",
     description: "",
   };
-  const [packageData, setPackageData] = useState(initialState);
+
+  const [formData, handleChange, handleCancel] = useFormData(initialState);
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
@@ -20,10 +22,10 @@ const PackageItemTable = ({ npmpackages, isAdding, toggleAdding }) => {
     e.preventDefault();
     dispatch(
       createPackage({
-        name: packageData.name,
-        description: packageData.description,
-        link: packageData.link,
-        category: packageData.category,
+        name: formData.name,
+        description: formData.description,
+        link: formData.link,
+        category: formData.category,
         userId: user._id,
       })
     );
@@ -31,16 +33,12 @@ const PackageItemTable = ({ npmpackages, isAdding, toggleAdding }) => {
   };
 
   const onCancel = () => {
-    setPackageData(initialState);
+    handleCancel();
     toggleAdding(false);
-  };
-  const onChange = (e) => {
-    setPackageData({ ...packageData, [e.target.name]: e.target.value });
   };
   return (
     <table className='text-sm text-gray-50'>
       <HeadTable />
-
       <tbody>
         {npmpackages.length &&
           npmpackages.map((npmpackage) => {
@@ -53,11 +51,11 @@ const PackageItemTable = ({ npmpackages, isAdding, toggleAdding }) => {
           })}
         {isAdding && (
           <DataForm
-            packageData={packageData}
+            packageData={formData}
             onAction={onCancel}
             actionName='Cancel'
             onSubmit={onSubmit}
-            onChange={onChange}
+            onChange={handleChange}
           />
         )}
       </tbody>
