@@ -15,11 +15,11 @@ const Header = () => {
   };
 
   return (
-    <header className='header flex justify-between items-center p-2 bg-white text-[#FF914D] border-b-2 border-[#FF914D]'>
+    <header className='header flex justify-between items-center p-2 bg-white text-[#FF914D] border-b-2 drop-shadow-md'>
       <div className='logo'>
         <Link to='/'>
           <img
-            className='w-24 md:w-32'
+            className='w-20 md:w-24'
             src={logoph}
             alt='logo-packages-Memo'
           />{" "}

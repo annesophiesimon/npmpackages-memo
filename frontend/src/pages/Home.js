@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <main className='flex flex-col text-center pb-8'>
-      <section className='p-24 bg-gradient-to-r from-red-600 to-yellow-400 text-white '>
+      <section className='p-24 bg-gradient-to-r from-red-500 to-orange-500  text-white '>
         <div className='md:max-w-[800px] mx-auto'>
           <h1 className='text-3xl md:text-6xl text-center font-sansserif font-bold mb-4'>
             Empower Your Development Journey
