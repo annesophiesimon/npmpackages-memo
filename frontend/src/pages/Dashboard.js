@@ -57,7 +57,7 @@ const Dashboard = () => {
           </h1>
 
           <section className='md:w-full flex justify-center m-auto'>
-            {npmpackages.length > 0 ? (
+            {npmpackages.length > 0 || isAdding ? (
               <PackageItemTable
                 npmpackages={npmpackages}
                 isAdding={isAdding}
