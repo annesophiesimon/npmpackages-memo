@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
-import logoph from "../assets/logoph.png";
-
+import logoph from "../assets/logophwhite.png";
+import logophorange from "../assets/logophorange.png";
 const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
 
@@ -15,14 +16,19 @@ const Header = () => {
   };
 
   return (
-    <header className='header flex justify-between items-center p-2 bg-white text-[#FF914D] border-b-2 drop-shadow-md'>
+    <header
+      className={`header flex justify-between items-center p-4 ${
+        location.pathname !== "/"
+          ? "bg-white text-orange-500"
+          : "bg-gradient-to-r from-orange-400 via-orange-500 to-orange-400 text-white"
+      }`}>
       <div className='logo'>
         <Link to='/'>
           <img
             className='w-20 md:w-24'
-            src={logoph}
+            src={location.pathname !== "/" ? logophorange : logoph}
             alt='logo-packages-Memo'
-          />{" "}
+          />
         </Link>
       </div>
       <ul className='flex space-x-4'>
