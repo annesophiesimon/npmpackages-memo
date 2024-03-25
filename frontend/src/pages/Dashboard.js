@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { getPackages, reset } from "../features/npmpackages/npmpackageSlice";
 import PackageItemTable from "../containers/PackageItemTable";
 import Spinner from "../components/Spinner";
-import CopyToClipboard from "../components/CopyToClipboard";
 
 const Dashboard = () => {
   const dispatch = useDispatch();
